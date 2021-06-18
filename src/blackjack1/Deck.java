@@ -1,6 +1,6 @@
 package blackjack1;
 
-public class Deck {
+public abstract class Deck {
     //there are 52 cards in a deck
     private int numofcards;
     private int remainingcards;

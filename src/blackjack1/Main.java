@@ -43,27 +43,49 @@ public class Main {
         for(int i=0; i<2; i++){
           String playercard = deck1.generateCard();
           player1card += playercard;
+          player1card += " ";
           String dealerCard = deck1.generateCard();
           dealerCard1 += dealerCard;
+          dealerCard1 += " ";
 
+//    addd to score not replace
 
-
-          player1score = deck1.checkCards(player1card);
-          dealerscore = deck1.checkCards(dealerCard1);
+          player1score += deck1.checkCards(playercard);
+          dealerscore += deck1.checkCards(dealerCard);
 
         }
 
         System.out.println("Your current cards are: " + player1card + " your score is: " + player1score);
         System.out.println("The dealers cards are: " + dealerCard1 + " their score is: " + dealerscore) ;
 
-        System.out.println("would you like  to hit, stand or bust: ");
-        String userOption = input.nextLine();
+        // fix input - not recording
+        while (player1score > 21 || dealerscore > 21){
+            System.out.println("would you like to hit, stick: ");
+            String userOption = input.next();
 
-        switch(userOption){
-            case "hit":
-                player1card += deck1.generateCard();
-                player1score += deck1.checkCards(player1card);
+            switch (userOption) {
+                case "hit":
+                    player1card += deck1.generateCard();
+                    player1score += deck1.checkCards(player1card);
 
+                    System.out.println("your cards are now: " + player1card + " and score is now: "+ player1score);
+                    break;
+                case "stick":
+                    break;
+
+
+            }
+        }
+
+        if(player1score > 21) {
+            System.out.println("Game over, the dealer has won!!! ");
+
+        } else if (dealerscore > 21){
+            System.out.println("Congratulations, you have won, the dealer is now bust");
+        }
+
+
+            }
         }
 
 
@@ -72,5 +94,7 @@ public class Main {
 
 
 
-    }
-}
+
+
+
+
