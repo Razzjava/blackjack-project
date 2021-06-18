@@ -1,4 +1,4 @@
-package blackjack;
+package blackjack1;
 
 public class Deck {
     //there are 52 cards in a deck
@@ -7,8 +7,8 @@ public class Deck {
 
 
     // constrctor
-    public void Deck(int vnumofcards){
-        this.numofcards = vnumofcards;
+    public Deck(int vnumofcards){
+        numofcards = vnumofcards;
     }
 
     //methods
