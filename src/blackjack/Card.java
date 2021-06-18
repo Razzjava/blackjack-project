@@ -1,6 +1,17 @@
 package blackjack;
 
-public class Card {
+public class Card extends Deck{
 
-    //file edited
+    //attributes
+    private int cardNum;
+
+    //contructor
+//    public void Card(int numofcards){
+//        super(numofcards);
+//    }
+
+
+    //methods
+
+
 }
