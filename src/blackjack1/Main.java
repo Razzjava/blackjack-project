@@ -59,7 +59,7 @@ public class Main {
         System.out.println("The dealers cards are: " + dealerCard1 + " their score is: " + dealerscore) ;
 
         // fix input - not recording
-        while (player1score < 21 || dealerscore < 21){
+        while (player1score < 21 && dealerscore < 21){
             System.out.println("would you like to hit, stick: ");
             String userOption = input.next();
 
