@@ -1,3 +1,7 @@
 ## Black Jack Project
 
-please go to the folder blackjack1 to view source code
+Welcome to the balckJack game.
+
+This game is currently running on terminal only
+
+keep following for more updates
