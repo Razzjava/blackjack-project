@@ -15,7 +15,7 @@ public class Main {
         boolean userwantstoplay = input.nextBoolean();
 
         if(userwantstoplay){
-            playGame();
+            playGame2();
 
         } else{
             System.out.println("Thanks for coming, please come back again!");
@@ -84,6 +84,38 @@ public class Main {
         } else if (dealerscore > 21){
             System.out.println("Congratulations, you have won, the dealer is now bust");
         }
+
+
+            }
+
+            // second function to test move to PLayer class
+            public static void playGame2(){
+
+        // deck instanitated
+                Card deck2 = new Card(52);
+
+                System.out.println("Thanks for joining the game!, we will now give you your first two cards");
+
+        // time to instantiate player and dealer
+
+        Player user = new Player();
+        Player dealer = new Player();
+
+        //generating initial cards and setting scores;
+        for(int i=0; i<2; i++){
+            String newCard1 = deck2.generateCard();
+            user.setCard(newCard1);
+            user.setScore(deck2.checkCards(newCard1));
+
+            String newCard2 = deck2.generateCard();
+            dealer.setCard(newCard2);
+            dealer.setScore(deck2.checkCards(newCard2));
+        }
+
+        // get info call
+        user.info();
+        dealer.info();
+
 
 
             }

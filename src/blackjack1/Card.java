@@ -24,6 +24,8 @@ public class Card extends Deck{
     //methods
 
 
+
+
     public String generateCard(){
         Random rand =  new Random();
         int randomNum = rand.nextInt(10)+1;
