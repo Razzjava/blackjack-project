@@ -1,6 +1,6 @@
-## Black Jack Project
+## BlackJack Project
 
-Welcome to the balckJack game.
+Welcome to the blackjack game.
 
 This game is currently running on terminal only
 
