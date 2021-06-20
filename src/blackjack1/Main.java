@@ -168,7 +168,14 @@ public class Main {
                     System.out.println("Unlucky, the dealer won, better luck next time!");
                 }
 
+                System.out.println("Would you like to play again? (true/false): ");
+                Boolean playAgain = input.nextBoolean();
 
+                if (playAgain){
+                    playGame2();
+                } else{
+                    System.out.println("Thanks for playing Blackjack, come back at any time!");
+                }
             }
         }
 
