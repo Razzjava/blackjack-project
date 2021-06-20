@@ -15,6 +15,13 @@ public class CardTest {
         assertEquals(10, testCard.checkCards("jack"));
     }
 
+    @Test
+    @DisplayName("Test to see if num of cards is returned ")
+
+    public void TestNumofCards(){
+        assertEquals(52, testCard.getNumofcards());
+    }
+
 
 
 

@@ -22,6 +22,7 @@ public abstract class Deck {
         this.remainingcards = remainingcards;
     }
 
-
-
+    public int getNumofcards() {
+        return numofcards;
+    }
 }
