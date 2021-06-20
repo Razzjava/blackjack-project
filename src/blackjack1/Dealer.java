@@ -11,7 +11,7 @@ public class Dealer extends Player {
     public String dealerDecision(){
         int score = this.getScore();
 
-        while (score <= 20){
+        while (score <= 17){
             return "hit";
         }
 
@@ -19,5 +19,9 @@ public class Dealer extends Player {
 
 
 
+    }
+
+    public void info(){
+        System.out.println("The Dealers Cards are: "+ cards + " and their score is currently: "+ score);
     }
 }
