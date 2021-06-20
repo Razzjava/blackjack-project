@@ -2,7 +2,7 @@ package blackjack1;
 
 
 
-public class Player {
+public abstract class Player {
     //attributes
     int score;
     String cards = "";

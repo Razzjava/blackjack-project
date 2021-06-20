@@ -94,14 +94,14 @@ public class Main {
             // second function to test move to Player class and Dealer class
             public static void playGame2() {
 
-                // deck instanitated
+                // deck instantiated
                 Card deck2 = new Card(52);
 
                 System.out.println("Thanks for joining the game!, we will now give you your first two cards");
 
                 // time to instantiate player and dealer
 
-                Player user = new Player();
+                User user = new User();
                 Dealer dealer = new Dealer();
 
                 //generating initial cards and setting scores;
@@ -157,10 +157,10 @@ public class Main {
             }
 
 
-                if(user.getScore() > 21) {
+                if(user.getScore() >= 21) {
                     System.out.println("Game over, the dealer has won!!! ");
 
-                } else if (dealer.getScore() > 21){
+                } else if (dealer.getScore() >= 21){
                     System.out.println("Congratulations, you have won, the dealer is now bust");
                 } else if (user.getScore() > dealer.getScore()){
                     System.out.println("Congratulation, your hand is higher than the Dealers, you have won!!");
