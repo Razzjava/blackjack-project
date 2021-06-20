@@ -99,6 +99,9 @@ public class Main {
                 // deck instantiated
                 Card deck2 = new Card(52);
 
+//                System.out.println("How many people will be playing today?: ");
+//                int peoplePlaying = input.nextInt();
+
                 System.out.println("Thanks for joining the game!, we will now give you your first two cards");
 
                 // time to instantiate player and dealer
@@ -126,6 +129,10 @@ public class Main {
                 do {
                     System.out.println("would you like to hit, stick: ");
                     String userOption = input.next();
+                    userDecision += userOption;
+                    System.out.println(userDecision);
+
+
 
                     switch (userOption) {
                         case "hit":
@@ -139,34 +146,39 @@ public class Main {
                         case "stick":
                             break;
                     }
-                } while (userDecision == "hit");
+                } while (userDecision.equals("hit"));
 
-                while (dealer.dealerDecision() == "hit"){
-                    switch (dealer.dealerDecision()) {
-                        case "hit":
-                            System.out.println("The Dealer has decided to hit");
-                            String dealerCard = deck2.generateCard();
-                            dealer.setCard(dealerCard);
-                            dealer.setScore(deck2.checkCards(dealerCard));
+                if(user.getScore() > 21){
+                    System.out.println("Unlucky, once again you have lost, what a shame!");
+                } else{
 
-                            user.info();
-                            dealer.info();
-                            break;
-                        case "stick":
-                            break;
+                    while (dealer.dealerDecision() == "hit") {
+                        switch (dealer.dealerDecision()) {
+                            case "hit":
+                                System.out.println("The Dealer has decided to hit");
+                                String dealerCard = deck2.generateCard();
+                                dealer.setCard(dealerCard);
+                                dealer.setScore(deck2.checkCards(dealerCard));
 
+                                user.info();
+                                dealer.info();
+                                break;
+                            case "stick":
+                                break;
+
+                        }
                     }
-            }
+                }
 
 
-                if(user.getScore() >= 21) {
+                if(user.getScore() > 21) {
                     System.out.println("Game over, the dealer has won!!! ");
 
-                } else if (dealer.getScore() >= 21){
+                } else if (dealer.getScore() > 21){
                     System.out.println("Congratulations, you have won, the dealer is now bust");
                 } else if (user.getScore() > dealer.getScore()){
                     System.out.println("Congratulation, your hand is higher than the Dealers, you have won!!");
-                } else {
+                } else if (dealer.getScore() > user.getScore()){
                     System.out.println("Unlucky, the dealer won, better luck next time!");
                 }
 
