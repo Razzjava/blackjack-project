@@ -27,6 +27,7 @@ public class Main {
 
     }
 
+    // initial implementation
     public static void playGame(){
         // instantiate deck
         Card deck1 = new Card(52);
@@ -88,7 +89,9 @@ public class Main {
 
             }
 
-            // second function to test move to PLayer class
+
+
+            // second function to test move to Player class and Dealer class
             public static void playGame2(){
 
         // deck instanitated
@@ -99,7 +102,7 @@ public class Main {
         // time to instantiate player and dealer
 
         Player user = new Player();
-        Player dealer = new Player();
+        Dealer dealer = new Dealer();
 
         //generating initial cards and setting scores;
         for(int i=0; i<2; i++){
@@ -116,6 +119,45 @@ public class Main {
         user.info();
         dealer.info();
 
+        while(user.getScore() < 21 && dealer.getScore()< 21){
+            System.out.println("would you like to hit, stick: ");
+            String userOption = input.next();
+
+            switch (userOption) {
+                case "hit":
+                    String playerCard = deck2.generateCard();
+                    user.setCard(playerCard);
+                    user.setScore(deck2.checkCards(playerCard));
+
+                    user.info();
+                    dealer.info();
+                    break;
+                case "stick":
+                    break;
+            }
+
+            switch(dealer.dealerDecision()){
+                case "hit":
+                    System.out.println("The Dealer has decided to hit");
+                    String dealerCard = deck2.generateCard();
+                    dealer.setCard(dealerCard);
+                    dealer.setScore(deck2.checkCards(dealerCard));
+
+                    user.info();
+                    dealer.info();
+                    break;
+                case "stick":
+                    break;
+
+            }
+        }
+
+                if(user.getScore() > 21) {
+                    System.out.println("Game over, the dealer has won!!! ");
+
+                } else if (dealer.getScore() > 21){
+                    System.out.println("Congratulations, you have won, the dealer is now bust");
+                }
 
 
             }

@@ -5,7 +5,7 @@ package blackjack1;
 public class Player {
     //attributes
     int score;
-    String cards;
+    String cards = "";
     //constructor
 
 
@@ -17,7 +17,7 @@ public class Player {
    }
 
    public void setCard(String card){
-       this.cards += card + " ";
+       this.cards += card + ", ";
 
    }
 
@@ -33,5 +33,6 @@ public class Player {
        System.out.println("Your current Cards are: "+ cards + " and your score is currently: "+ score);
     }
 
-    // make a maethod to come up with a random decision to hit or stick
+
+
 }
