@@ -146,7 +146,7 @@ public class Main {
                         case "stick":
                             break;
                     }
-                } while (userDecision.equals("hit"));
+                } while (userDecision.equals("hit") && user.getScore() <= 21);
 
                 if(user.getScore() > 21){
                     System.out.println("Unlucky, once again you have lost, what a shame!");

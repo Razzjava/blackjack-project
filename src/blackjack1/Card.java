@@ -50,8 +50,7 @@ public class Card extends Deck{
             card = "8";
         } else if (randomNum == 9) {
             card = "9";
-        }else if(randomNum == 10){
-            card = "10";
+
         } else if (randomNum == 10){
             card = "jack";
         } else if (randomNum ==11){
@@ -103,8 +102,6 @@ public class Card extends Deck{
             case "9":
                 score += 9;
                 break;
-            case "10":
-                score += 10;
             case "jack":
                 score +=10;
                 break;
