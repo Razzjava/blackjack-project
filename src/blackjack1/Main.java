@@ -180,6 +180,8 @@ public class Main {
                     System.out.println("Congratulation, your hand is higher than the Dealers, you have won!!");
                 } else if (dealer.getScore() > user.getScore()){
                     System.out.println("Unlucky, the dealer won, better luck next time!");
+                } else if (dealer.getScore() == user.getScore()){
+                    System.out.println("Its a draw, you'll have play again");
                 }
 
                 System.out.println("Would you like to play again? (true/false): ");

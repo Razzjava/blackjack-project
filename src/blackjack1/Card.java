@@ -28,7 +28,7 @@ public class Card extends Deck{
 
     public String generateCard(){
         Random rand =  new Random();
-        int randomNum = rand.nextInt(10)+1;
+        int randomNum = rand.nextInt(12)+1;
 
         String card = "";
 
@@ -50,12 +50,14 @@ public class Card extends Deck{
             card = "8";
         } else if (randomNum == 9) {
             card = "9";
+        } else if (randomNum ==10) {
+            card = "10";
 
-        } else if (randomNum == 10){
+        } else if (randomNum == 11){
             card = "jack";
-        } else if (randomNum ==11){
+        } else if (randomNum ==12){
             card = "queen";
-        } else if (randomNum == 12){
+        } else if (randomNum == 13){
             card = "king";
         }
 
@@ -101,6 +103,9 @@ public class Card extends Deck{
                 break;
             case "9":
                 score += 9;
+                break;
+            case "10":
+                score += 10;
                 break;
             case "jack":
                 score +=10;
